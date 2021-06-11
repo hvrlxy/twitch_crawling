@@ -1,18 +1,21 @@
 import twitch, datetime
 from datetime import timezone
 
+#client_id = 'gp762nuuoqcoxypju8c569th9wz7q5'
+#oath_token = 'nv8v0sdhbaebvqj6dcez1iy14nvogw'
+
 client_id = 'gp762nuuoqcoxypju8c569th9wz7q5'
-oath_token = 'nv8v0sdhbaebvqj6dcez1iy14nvogw'
+oath_token = 'rfah7wcdu2i7ptkgzjpe9gj2or1j8d'
 
 client = twitch.TwitchHelix(client_id=client_id, oauth_token=oath_token)
 
 user_file = open('data.txt', 'r')
 user_data = user_file.readlines()
 user_file.close()
-num = 2600
+num = 2100
 
-stream_file = open('stream_data.txt','a+')
-inactive_file = open('inactive.txt', 'a+')
+stream_file = open('stream_week1.txt','a+')
+inactive_file = open('inactive_week1.txt', 'a+')
 
 for i in range(num):
 	user_data[i] = user_data[i].replace('\n','')
@@ -32,10 +35,11 @@ for i in range (num):
 			stream_viewer = stream[0]['viewer_count']
 			dt = datetime.datetime.now()
 
-			print(stream_id + ',' + user_data[i] + ',' + str(stream_start) + ',' + stream_game + ',' + stream_gameid 
+			stream_file.write(stream_id + ',' + user_data[i] + ',' + str(stream_start) + ',' + stream_game + ',' + stream_gameid 
 				+ ',' + stream_lang + ',' + str(stream_viewer) + ',' + str(user_follow) + ',' + str(current_time) + '\n')
 		else:
 			inactive_file.write(user_data[i] + ',' + str(user_follow) + ',' + str(current_time) + '\n')
+		print(datetime.datetime.now())
 	except twitch.exceptions.TwitchNotProvidedException:
 		continue
 

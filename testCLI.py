@@ -5,14 +5,14 @@ try:
     while(True):
         print()
         print("Process Begain")
-        subprocess.run('gtimeout 1800 python3 user_data.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data2.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data2.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data2.py', shell=True)
-        subprocess.run('gtimeout 1800 python3 user_data2.py', shell=True)
+        subprocess.run('python3 user_data.py', shell=True)
+        subprocess.run('python3 user_data.py', shell=True)
+        subprocess.run('python3 user_data.py', shell=True)
+        subprocess.run('python3 user_data.py', shell=True)
+        subprocess.run('python3 crawl2.py', shell=True)
+        subprocess.run('python3 crawl2.py', shell=True)
+        subprocess.run('python3 crawl2.py', shell=True)
+        subprocess.run('python3 crawl2.py', shell=True)
         
 
 except KeyboardInterrupt:
