@@ -22,7 +22,6 @@ for i in range(num):
 
 for i in range (2101, 2101 + num):
 	try:
-		try:
 			stream = client.get_streams(user_ids=user_data[i])
 			user_follow = client.get_user_follows(to_id=user_data[i]).total
 			current_time = datetime.datetime.utcnow()
