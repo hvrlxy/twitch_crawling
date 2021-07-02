@@ -15,12 +15,8 @@ for ia in unique_inactive:
 	ia_np = ia_pd.to_numpy()
 	if len(ia_np) > 1:
 		incr = [0]
-		for i in range(1,len(ia_np)):
-			try:
-				val = int(ia_np[i,1] - ia_np[i - 1, 1])
-				incr.append(val)
-			except ValueError:
-				break
+		for i in range(0,len(ia_np)):
+			incr.append(ia_np[i,1])
 
 		table.append(incr)
 
@@ -44,7 +40,7 @@ import matplotlib.pyplot as plt
 # as y axis
 plt.plot(x, y)
   
-plt.title("Distribution of Followers gained during an Inactive Period")
+plt.title("Distribution of Followers during an Inactive Period")
 
 # Adding the legends
 plt.xlabel('hours into the inactive period')
