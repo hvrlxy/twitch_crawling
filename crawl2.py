@@ -14,8 +14,8 @@ user_data = user_file.readlines()
 user_file.close()
 num = 2100
 
-stream_file = open('stream_week2+.txt','a+')
-inactive_file = open('inactive_week2+.txt', 'a+')
+stream_file = open('stream_week3.txt','a+')
+inactive_file = open('inactive_week3.txt', 'a+')
 
 for i in range(len(user_data)):
 	user_data[i] = user_data[i].replace('\n','')
